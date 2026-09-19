@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Show more content -->
+	<script type="text/javascript">
+		function toggle_vis(id) {
+	    // var e = document.getElementById(id);
+	    var e = document.getElementsByClassName(id);
+			var showText = document.getElementById("showText");
+			for (var i = 0; i < e.length; i++) {
+		    	if (e[i].style.display == "none") {
+		        	e[i].style.display = "inline";
+	    			showText.innerHTML = "[Show less]";
+		    	} else {
+		    		e[i].style.display = "none";
+		    		showText.innerHTML = "[Show more]";
+		    	}
+		    }
+	    }
+	</script>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<!-- https://fontawesome.com/cheatsheet -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+	<!-- Custom styles for this template -->
+	<link href="files/jumbotron.css" rel="stylesheet">
+</head>
+
+<title>Chao Tan</title>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="Home">
+	    <div class="container">
+		<a class="navbar-brand" href="#Home">Chao Tan</a>
+
+		<div class="collapse navbar-collapse" id="navbarToggle">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#Home">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#Publications">Publications</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#Honors">Honors</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#Teaching">Teaching</a>
+				</li>
+			</ul>
+		</div>
+	    </div>
+	</nav>
+
+	<div class="container" style="padding-top: 20px; font-size: 17px">
+		<div class="row">
+			<div class="col-md-3", style="padding-right: 40px">
+				<br>
+				<img class="img-responsive img-rounded" src="files/chaotan.jpeg" alt="Photo" style="max-width: 100%; border:1px solid black"><br>
+			</div>
+
+			<div class="col-md-9">
+			<br>
+			<p><font style="font-size: 20px"><b>Chao Tan</b></font></p>
+
+			<p>I am a [TODO: your position, e.g. PhD student / Researcher / Engineer] at [TODO: your institution].
+				I work on [TODO: your research area — e.g. robotics, bimanual teleoperation, learning-based control].
+			</p>
+
+			<p>[TODO: One or two sentences about your research focus and goals.]
+			</p>
+
+			<p> In my spare time I enjoy [TODO: your hobbies]. Here is a <a href="files/slides/poem.pdf" target="_blank">selected collection of my poems</a>.
+			</p>
+
+			<p>
+            <a target="_blank" href="TODO_GOOGLE_SCHOLAR_URL"><font color="black"><i class="ai ai-google-scholar ai-lg"></i></font></a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+            <a target="_blank" href="https://github.com/chaotan"><font color="black"><i class="fab fa-github fa-lg"></i></font></a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+            TODO_EMAIL [at] TODO_DOMAIN (dot) edu
+			</p>
+
+			</div>
+		</div>
+	</div><br><br>
+
+	<!-- News -->
+	<div class="container">
+		<h3 id="News" style="padding-top: 80px; margin-top: -80px;">News</h3>
+		<ul>
+			<li>
+				[TODO: date] [TODO: a news item — e.g. a paper accepted, a talk given, an award won].
+			</li>
+			<li>[TODO: date] [TODO: another news item].</li>
+		</ul>
+	</div><br>
+
+	<!-- Publications -->
+	<div class="container">
+		<h3 id="Publications" style="padding-top: 80px; margin-top: -80px;">
+			Selected Publications
+		</h3>
+
+		<div id="pubs"></div>
+        <font color="black">(* indicates equal contribution)</font><br><hr>
+
+			<div class="row">
+				<div class="col-md-3">
+					<video width="100%" playsinline="" autoplay="" loop="" preload="" muted="" style="border:1px solid black">
+                		<source src="files/paper/Bimanual-Teleoperation.mp4" type="video/mp4">
+            		</video>
+				</div>
+				<div class="col-md-9">
+				<b><font color="black">[TODO: Paper title — e.g. Bimanual Teleoperation ...]</font></b><br>
+				<u>Chao Tan</u>, [TODO: co-authors]
+				<br>
+				<b><font color="navy">[TODO: Venue, e.g. arXiv preprint / ICRA 2026]</font></b> <br>
+				<a href="files/paper/arxiv_2026.pdf" target="_blank"> <small>[Paper]</small></a>
+				<!-- <a href="TODO_PROJECT_URL" target="_blank"> <small>[Project]</small></a> -->
+				<!-- <a href="TODO_VIDEO_URL" target="_blank"> <small>[Video]</small></a> -->
+                </div>
+			</div><hr>
+	<br><br>
+
+	<!-- Awards -->
+	<div class="container">
+		<h3 id="Honors" style="padding-top: 80px; margin-top: -80px;">Selected Honors</h3>
+		<ul>
+			<li>[TODO: Award / Fellowship], [TODO: year]</li>
+            <li>[TODO: Award / Fellowship], [TODO: year]</li>
+		</ul>
+	</div><br>
+
+	<!-- Teaching -->
+	<div class="container">
+		<h3 id="teaching" style="padding-top: 80px; margin-top: -80px;">Teaching</h3>
+		<ul>
+			<li>[TODO: Course number and name], [TODO: Institution]</li>
+        </ul>
+	</div><br>
+
+	<!-- Service -->
+	<!-- <div class="container" style="padding-top: 20px; font-size: 17px; width: 1080px">
+		<h3 id="Service" style="padding-top: 80px; margin-top: -80px;">Professional Service</h3>
+		<ul>
+			<li> Workshops / Tutorials: <br>
+				<a href="https://s2023.siggraph.org/presentation/?id=gensub_208&sess=sess164" target="_blank">Diffusion Models Course at SIGGRAPH 2023 <br>
+			</li>
+			<li> Conference Reviewer: <br>
+				IEEE International Conference on Robotics and Automoation (ICRA) <br>
+			</li>
+			<li>Journal Reviewer: <br>
+				IEEE Robotics and Automation Letters (RA-L) <br>
+			</li>
+		</ul>
+	</div><br> -->
+
+	<div class="container">
+		<hr>
+		<center>
+			<footer>
+				<p>&copy; Chao Tan 2026</p>
+			</footer>
+		</center>
+	</div>
+	<!-- /container -->
+
+	<!-- Bootstrap core JavaScript -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</body>
+
+</html>
