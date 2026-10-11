@@ -154,14 +154,24 @@ h1 {
 
 figure { margin: 0; }
 
-.hero-figure {
+.video-figure { scroll-margin-top: 24px; }
+
+.video-frame {
+  position: relative;
   overflow: hidden;
-  border: 1px solid #ececeb;
+  aspect-ratio: 16 / 9;
   border-radius: 5px;
-  background: #fff;
+  background: #101112;
+  box-shadow: 0 10px 32px rgba(20, 24, 28, 0.12);
 }
 
-.hero-figure img { width: 100%; }
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
 figcaption {
   padding: 10px 14px 0;
@@ -446,7 +456,7 @@ a:focus-visible {
   .publication-links { gap: 12px; }
   .resource-button { min-width: 118px; padding: 8px 19px; font-size: 16px; }
   .paper-lead { margin-top: 28px; font-size: 17px; line-height: 1.65; }
-  .hero-figure figcaption { text-align: left; }
+  .video-figure figcaption { text-align: left; }
   .abstract-section, .content-section { padding-block: 34px; }
   .centered-heading { font-size: 30px; }
   .abstract-copy { text-align: left; }
