@@ -71,22 +71,29 @@
     <section class="abstract-section page-width" id="abstract">
       <h2 class="centered-heading">Abstract</h2>
       <div class="abstract-copy">
-        <p>Real-time bimanual humanoid teleoperation requires accurate wrist tracking and stable arm posture. Kinematic redundancy allows different elbow configurations for the same wrist pose. Existing methods that track only the wrists can therefore cause elbow drift or configuration jumps. Anthropomorphic constraints help guide elbow posture, but fixed constraints can restrict singularity avoidance and impose unreliable guidance as the human arm straightens.</p>
-        <p>We propose a human-like redundancy-resolution framework that prioritizes singularity-robust wrist tracking and uses adaptive elbow guidance to resolve redundancy. Shoulder&ndash;wrist geometric retargeting generates robot-scale wrist targets. Elbow-offset direction guides posture, and its magnitude controls guidance strength. Guidance weakens and deactivates as the human arm straightens. A hierarchical velocity solver then applies adaptive elbow guidance in the wrist-task null space.</p>
-        <p>In a fixed-wrist-target ablation, adaptive guidance reduces mean elbow-direction error by 54.4%. In a workspace-boundary stress test, singularity-robust tracking reduces peak raw joint-velocity demand by 97.9%. Real-world bimanual tasks and cross-platform retargeting demonstrate practical utility across robot morphologies.</p>
+        <p>Real-time bimanual humanoid teleoperation requires accurate wrist tracking and stable arm posture. Kinematic redundancy allows different elbow configurations for the same wrist pose. Existing methods that track only the wrists can therefore cause elbow drift or configuration jumps. Anthropomorphic constraints help guide elbow posture, but fixed constraints can restrict singularity avoidance and impose unreliable guidance as the human arm straightens. We propose a human-like redundancy-resolution framework that prioritizes singularity-robust wrist tracking and uses adaptive elbow guidance to resolve redundancy. Shoulder&ndash;wrist geometric retargeting generates robot-scale wrist targets. Elbow-offset direction guides posture, and its magnitude controls guidance strength. Guidance weakens and deactivates as the human arm straightens. A hierarchical velocity solver then applies adaptive elbow guidance in the wrist-task null space. In a fixed-wrist-target ablation, adaptive guidance reduces mean elbow-direction error by 54.4%. In a workspace-boundary stress test, singularity-robust tracking reduces peak raw joint-velocity demand by 97.9%. Real-world bimanual tasks and cross-platform retargeting demonstrate practical utility across robot morphologies.</p>
       </div>
+    </section>
+
+    <section class="content-section page-width" id="problem">
+      <div class="section-heading">
+        <p class="section-index">01</p>
+        <h2>Why Redundancy Resolution Matters</h2>
+      </div>
+      <p class="section-intro">A 7-DoF humanoid arm can reach the same 6-DoF wrist pose with many different elbow configurations. Wrist tracking alone therefore leaves the elbow underconstrained, which can cause unnatural drift or sudden configuration changes.</p>
+      <p>Adding a fixed anthropomorphic constraint does not fully solve the problem. Near full arm extension, the human elbow direction becomes unreliable, while rigid posture guidance can prevent the robot from using its redundancy to avoid singularities and joint limits. The controller must preserve the operator's wrist intent, recover a human-like posture when the observation is reliable, and release that guidance when it is not.</p>
+      <figure class="full-figure">
+        <img src="assets/motivation.webp" loading="lazy" alt="Comparison of wrist-only inverse kinematics, fixed anthropomorphic constraints, and the proposed human-like redundancy-resolution method">
+        <figcaption>Wrist-only tracking underconstrains the elbow, while a fixed anthropomorphic constraint can restrict feasible wrist motion.</figcaption>
+      </figure>
     </section>
 
     <section class="content-section page-width" id="method">
       <div class="section-heading">
-        <p class="section-index">01</p>
-        <h2>Human-Like Redundancy Resolution</h2>
+        <p class="section-index">02</p>
+        <h2>Our Method</h2>
       </div>
-      <p class="section-intro">The framework translates human motion to robot-scale wrist targets, adapts elbow guidance to the reliability of human posture, and preserves wrist-task priority through a hierarchical solver.</p>
-      <figure class="full-figure">
-        <img src="assets/motivation.webp" loading="lazy" alt="Comparison of wrist-only inverse kinematics, fixed anthropomorphic constraints, and the proposed human-like redundancy-resolution method">
-        <figcaption>Our method preserves the operator's wrist intent while producing stable, feasible, and human-like elbow motion.</figcaption>
-      </figure>
+      <p class="section-intro">Our human-like redundancy-resolution framework translates human motion to robot-scale wrist targets, adapts elbow guidance to the reliability of human posture, and preserves wrist-task priority through a hierarchical solver.</p>
       <figure class="full-figure">
         <img src="assets/framework.webp" loading="lazy" alt="Overview of shoulder-wrist geometric retargeting, adaptive elbow-offset guidance, singularity-robust wrist tracking, and the hierarchical solver">
         <figcaption>Framework overview: human motion input, adaptive redundancy guidance, and real-time robot execution.</figcaption>
@@ -113,7 +120,7 @@
 
     <section class="content-section page-width" id="results">
       <div class="section-heading">
-        <p class="section-index">02</p>
+        <p class="section-index">03</p>
         <h2>Quantitative Evaluation</h2>
       </div>
       <p class="section-intro">We evaluate 15 static arm poses, dynamic motion sequences, fixed-wrist ablations, and a near-boundary singularity stress test.</p>
@@ -147,7 +154,7 @@
 
     <section class="content-section page-width" id="experiments">
       <div class="section-heading">
-        <p class="section-index">03</p>
+        <p class="section-index">04</p>
         <h2>Cross-Platform Teleoperation</h2>
       </div>
       <p class="section-intro">The same framework transfers across JAKA K1, Fourier GR-1, and Unitree H1, demonstrating practical use across different humanoid morphologies.</p>
@@ -187,7 +194,7 @@
 
     <section class="content-section page-width" id="bibtex">
       <div class="section-heading">
-        <p class="section-index">04</p>
+        <p class="section-index">05</p>
         <h2>BibTeX</h2>
       </div>
       <div class="bibtex-wrap">
