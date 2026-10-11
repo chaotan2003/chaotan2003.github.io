@@ -67,18 +67,18 @@ sup {
 
 h1 {
   margin: 0;
-  font-size: clamp(2.55rem, 5.2vw, 4rem);
-  font-weight: 750;
-  letter-spacing: -0.045em;
-  line-height: 1.03;
+  font-size: clamp(2.45rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
 }
 
 .subtitle {
-  margin: 10px 0 0;
-  font-size: clamp(1.45rem, 3.3vw, 2.25rem);
+  margin: 8px 0 0;
+  font-size: clamp(2rem, 3.2vw, 2.35rem);
   font-weight: 700;
   letter-spacing: -0.025em;
-  line-height: 1.16;
+  line-height: 1.12;
 }
 
 .authors {
@@ -439,8 +439,8 @@ a:focus-visible {
   .hero { padding-top: 34px; }
   .project-title { display: block; }
   .project-mark { width: 60px; height: 60px; margin-bottom: 12px; }
-  h1 { font-size: 2.25rem; }
-  .subtitle { margin-top: 8px; font-size: 1.35rem; }
+  h1 { font-size: 2rem; }
+  .subtitle { margin-top: 8px; font-size: 1.65rem; }
   .authors { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px 15px; margin-top: 32px; font-size: 15px; }
   .affiliations { font-size: 14px; }
   .publication-links { gap: 12px; }
