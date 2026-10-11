@@ -141,7 +141,7 @@ h1 {
 }
 
 .paper-lead {
-  max-width: 900px;
+  width: 100%;
   margin: 36px auto 24px;
   color: #454749;
   font-size: 20px;
@@ -456,7 +456,6 @@ a:focus-visible {
   .publication-links { gap: 12px; }
   .resource-button { min-width: 118px; padding: 8px 19px; font-size: 16px; }
   .paper-lead { margin-top: 28px; font-size: 17px; line-height: 1.65; }
-  .video-figure figcaption { text-align: left; }
   .abstract-section, .content-section { padding-block: 34px; }
   .centered-heading { font-size: 30px; }
   .abstract-copy { text-align: left; }
