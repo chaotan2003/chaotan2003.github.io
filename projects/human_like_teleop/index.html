@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Human-Like Redundancy Resolution for Real-Time Bimanual Humanoid Teleoperation. Adaptive elbow guidance and singularity-robust wrist tracking for humanoid robots.">
+  <meta name="theme-color" content="#f7f9fc">
+  <meta property="og:title" content="Human-Like Redundancy Resolution | Bimanual Humanoid Teleoperation">
+  <meta property="og:description" content="Adaptive redundancy resolution, singularity-robust wrist tracking, and real-time bimanual humanoid teleoperation.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/framework.webp">
+  <title>Human-Like Redundancy Resolution | Humanoid Teleoperation</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner container-wide">
+      <a class="wordmark" href="#top" aria-label="Back to top"><span class="wordmark-mark">H</span> Human-Like Teleoperation</a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#experiments">Demonstrations</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="overline"><span class="overline-dot"></span> RESEARCH PROJECT · 2026</div>
+      <h1>Human-Like Redundancy Resolution<br class="wide-only"> for Real-Time Bimanual<br class="wide-only"> Humanoid Teleoperation</h1>
+      <div class="authors" aria-label="Paper authors">
+        <a href="https://chaotan2003.github.io/" target="_blank" rel="noopener">Chao Tan</a><sup>1</sup><span class="sep">·</span>
+        <span>Ming Shin Cindy Sung</span><sup>1</sup><span class="sep">·</span>
+        <span>Shuxian Liang</span><sup>1,*</sup><span class="sep">·</span>
+        <span>Chaoqun Wan</span><sup>1</sup><span class="sep">·</span>
+        <span>Zhen Huang</span><sup>1</sup><span class="sep">·</span>
+        <span>Xian-Sheng Hua</span><sup>1</sup>
+      </div>
+      <div class="affiliation"><sup>1</sup> Tongji University <span class="affiliation-divider">|</span> <sup>*</sup> Corresponding author</div>
+      <div class="hero-buttons">
+        <a class="action primary" href="paper.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4v13H7a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2Z"/><path d="M14 3.5V8h4M9 12h6M9 15.5h6"/></svg> Paper (PDF)</a>
+        <a class="action" href="https://github.com/IAIE-PhysicalAI/Bimanual-Teleoperation" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8 4 12l4 4M16 8l4 4-4 4M14 5l-4 14"/></svg> Code</a>
+        <a class="action" href="#video"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg> Video</a>
+      </div>
+      <p class="hero-summary">Prioritize singularity-robust wrist tracking, guide the elbow when human posture is informative, and release redundancy near full arm extension.</p>
+
+      <div class="video-frame" id="video" data-youtube-id="">
+        <div class="video-placeholder">
+          <div class="video-cover">
+            <img src="assets/motion_test.webp" alt="Sequence of a humanoid robot performing a wide-range arm motion test">
+            <div class="play-glyph" aria-hidden="true">▶</div>
+          </div>
+          <div class="video-caption"><strong>Project Video</strong><span>The video embed will appear here after adding the YouTube video ID to <code>index.html</code>.</span></div>
+        </div>
+      </div>
+      <p class="hero-caption">Human-like arm behavior with stable wrist tracking and adaptive redundancy resolution.</p>
+    </section>
+
+    <section class="section section-tinted" id="overview">
+      <div class="container">
+        <div class="section-heading"><div class="eyebrow">OVERVIEW</div><h2>Why redundancy resolution matters</h2></div>
+        <p class="section-lead">A 7-DoF humanoid arm can realize the same 6-DoF wrist pose with different elbow configurations. Wrist-only tracking may yield drifting or abrupt elbow postures; rigid anthropomorphic guidance can instead over-constrain the arm near singular configurations.</p>
+        <figure class="paper-figure figure-narrow"><img src="assets/motivation.webp" loading="lazy" alt="Problem illustration comparing wrist-only inverse kinematics, fixed anthropomorphic constraints, and the proposed human-like redundancy resolution"><figcaption>Wrist-only IK vs. fixed posture guidance vs. our adaptive, singularity-robust solution (paper Fig. 1).</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="container">
+        <div class="section-heading"><div class="eyebrow">OUR APPROACH</div><h2>A task-priority framework</h2></div>
+        <p class="section-lead">The framework combines robot-scale wrist retargeting with an elbow-offset preference that adapts to human posture reliability. A hierarchical velocity solver maintains wrist-task priority and applies anthropomorphic guidance in the null space.</p>
+        <figure class="paper-figure full-figure"><img src="assets/framework.webp" loading="lazy" alt="Full overview diagram of shoulder–wrist geometric retargeting, adaptive elbow-offset criterion, singularity-robust wrist tracking and hierarchical solver"><figcaption>Framework overview (paper Fig. 2).</figcaption></figure>
+        <div class="method-grid">
+          <article class="method-card"><div class="method-index">01 / RETARGET</div><h3>Shoulder–Wrist Geometric Retargeting</h3><p>Map human upper-arm motion and wrist orientation into robot-scale wrist targets while preserving the operator's end-effector intent.</p><div class="method-tag">SWGR</div></article>
+          <article class="method-card"><div class="method-index">02 / ADAPT</div><h3>Adaptive Elbow-Offset Guidance</h3><p>Use elbow-offset direction to guide anthropomorphic posture; progressively attenuate and deactivate the guidance near arm extension.</p><div class="method-tag">AEAC</div></article>
+          <article class="method-card"><div class="method-index">03 / SOLVE</div><h3>Singularity-Robust Wrist Tracking</h3><p>Suppress near-singular velocity amplification using robust wrist-task mapping and a hierarchical velocity solver with null-space objectives.</p><div class="method-tag">TASK PRIORITY</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tinted" id="results">
+      <div class="container">
+        <div class="section-heading"><div class="eyebrow">EVALUATION</div><h2>Quantitative results</h2></div>
+        <p class="section-lead">Evaluation includes 15 static arm poses, dynamic motion sequences, fixed-wrist ablations, and a near-boundary singularity stress test.</p>
+        <div class="metrics">
+          <div class="metric"><strong>54.4<span>%</span></strong><div>Lower mean elbow-direction error</div><small>vs. removing adaptive elbow guidance</small></div>
+          <div class="metric"><strong>97.9<span>%</span></strong><div>Lower peak raw joint-velocity demand</div><small>vs. undamped pseudoinverse</small></div>
+          <div class="metric"><strong>2.87<span> mm</span></strong><div>Mean wrist position error</div><small>static pose evaluation</small></div>
+          <div class="metric"><strong>90<span> Hz</span></strong><div>Real-time control frequency</div><small>4.35 ms average solve time</small></div>
+        </div>
+        <div class="fig-pair">
+          <figure class="paper-figure"><img src="assets/static_benchmarks.webp" loading="lazy" alt="Static position, rotation, arm-plane error and joint margin plots"><figcaption>Static benchmark across 15 poses (paper Fig. 3).</figcaption></figure>
+          <figure class="paper-figure"><img src="assets/dynamic_benchmarks.webp" loading="lazy" alt="Dynamic position and rotation error, arm-plane error, and singularity margin comparison"><figcaption>Dynamic trajectory comparison (paper Fig. 4).</figcaption></figure>
+        </div>
+        <div class="fig-pair ablation-pair">
+          <figure class="paper-figure"><img src="assets/elbow_ablation.webp" loading="lazy" alt="Elbow-direction error ablation plots"><figcaption>Adaptive elbow guidance ablation (paper Fig. 9).</figcaption></figure>
+          <figure class="paper-figure"><img src="assets/singularity_ablation.webp" loading="lazy" alt="Joint-velocity ablation comparison near singularity"><figcaption>Singularity-robust wrist tracking ablation (paper Fig. 10).</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experiments">
+      <div class="container">
+        <div class="section-heading"><div class="eyebrow">REAL ROBOT</div><h2>Cross-platform and bimanual demonstrations</h2></div>
+        <p class="section-lead">The same algorithmic framework is tested across JAKA K1, Fourier GR-1 and Unitree H1. Real-robot experiments include wide-range arm motion and bimanual manipulation.</p>
+        <figure class="paper-figure cross-figure"><img src="assets/cross_platform.webp" loading="lazy" alt="Cross-platform retargeting snapshots on Fourier GR-1, JAKA K1 and Unitree H1"><figcaption>Cross-platform retargeting with unchanged parameters (paper Fig. 6).</figcaption></figure>
+        <div class="demo-list">
+          <article class="demo-row"><div class="demo-copy"><span class="demo-kicker">EXPERIMENT 01</span><h3>Wide-Range Motion</h3><p>Neutral posture, arm extension, near-singular configurations, recovery and return.</p></div><img loading="lazy" src="assets/motion_test.webp" alt="Five robot arm configurations during wide-range motion test"></article>
+          <article class="demo-row"><div class="demo-copy"><span class="demo-kicker">EXPERIMENT 02</span><h3>Ring Stacking</h3><p>Coordinated grasping, transport, stacking and placement using both arms.</p></div><img loading="lazy" src="assets/stack_rings.webp" alt="Five stages of bimanual ring stacking experiment"></article>
+          <article class="demo-row"><div class="demo-copy"><span class="demo-kicker">EXPERIMENT 03</span><h3>Cucumber Peeling</h3><p>Stabilize an object with one arm and execute tool-based peeling with the other.</p></div><img loading="lazy" src="assets/peel_cucumber.webp" alt="Five stages of cucumber peeling experiment"></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tinted" id="abstract">
+      <div class="container container-text">
+        <div class="section-heading"><div class="eyebrow">PAPER</div><h2>Abstract</h2></div>
+        <p>Real-time bimanual humanoid teleoperation requires accurate wrist tracking and stable arm posture. Kinematic redundancy allows different elbow configurations for the same wrist pose. Existing methods that track only the wrists can therefore cause elbow drift or configuration jumps. Anthropomorphic constraints help guide elbow posture. However, fixed constraints can restrict singularity avoidance and impose unreliable elbow guidance as the human arm straightens.</p>
+        <p>We propose a human-like redundancy-resolution framework that prioritizes singularity-robust wrist tracking and uses adaptive elbow guidance to resolve redundancy. Shoulder–wrist geometric retargeting generates robot-scale wrist targets. Elbow-offset direction guides posture, and its magnitude controls guidance strength. Guidance weakens and deactivates as the human arm straightens. Finally, a hierarchical velocity solver implements singularity-robust wrist tracking and applies adaptive elbow guidance in the wrist-task null space.</p>
+        <p>In a fixed-wrist-target ablation, adaptive guidance reduces mean elbow-direction error by 54.4% compared with removing this guidance. In a workspace-boundary stress test, singularity-robust tracking reduces peak raw joint-velocity demand by 97.9% compared with the undamped pseudoinverse. Real-world bimanual tasks and cross-platform retargeting demonstrate practical utility across robot morphologies.</p>
+      </div>
+    </section>
+
+    <section class="section" id="citation">
+      <div class="container container-text">
+        <div class="section-heading"><div class="eyebrow">REFERENCES</div><h2>BibTeX</h2></div>
+        <div class="code-wrap"><button class="copy-button" type="button" aria-label="Copy BibTeX">Copy</button><pre id="bibtex"><code>@misc{tan2026humanlike,
+  title={Human-Like Redundancy Resolution for Real-Time Bimanual Humanoid Teleoperation},
+  author={Chao Tan and Ming Shin Cindy Sung and Shuxian Liang and Chaoqun Wan and Zhen Huang and Xian-Sheng Hua},
+  year={2026},
+  note={Manuscript}
+}</code></pre></div>
+        <p class="citation-note">Update this citation when an arXiv identifier or final publication information is available.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner"><div><strong>Human-Like Redundancy Resolution</strong><br>Tongji University · 2026</div><div class="footer-links"><a href="https://chaotan2003.github.io/" target="_blank" rel="noopener">Personal homepage</a><a href="https://github.com/IAIE-PhysicalAI/Bimanual-Teleoperation" target="_blank" rel="noopener">Code</a><a href="https://dingry.github.io/projects/bunny_visionpro" target="_blank" rel="noopener">Layout inspiration: Bunny-VisionPro</a></div></div>
+  </footer>
+</body>
+</html>
