@@ -335,6 +335,20 @@ figcaption {
   font-size: 27px;
 }
 
+.simulation-heading {
+  margin-top: 28px;
+  margin-bottom: 22px;
+}
+
+.simulation-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1586 / 720;
+  border-radius: 3px;
+  background: #101112;
+  object-fit: contain;
+}
+
 .demo-list {
   margin-top: 28px;
   border-top: 1px solid var(--line);
