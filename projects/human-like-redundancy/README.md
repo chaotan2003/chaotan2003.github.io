@@ -31,19 +31,19 @@ Your repository: <https://github.com/chaotan2003/chaotan2003.github.io>
    cd chaotan2003.github.io
    ```
 
-2. Create `projects/human_like_teleop/` in the repository and copy **all of the files in this folder** into it, maintaining `assets/` and filenames. Do not overwrite the homepage root `index.html`.
+2. Create `projects/human-like-redundancy/` in the repository and copy **all of the files in this folder** into it, maintaining `assets/` and filenames. Do not overwrite the homepage root `index.html`.
 
 3. Commit and push:
 
    ```bash
-   git add projects/human_like_teleop
+   git add projects/human-like-redundancy
    git commit -m "Add bimanual teleoperation project page"
    git push origin main
    ```
 
 4. If the GitHub Pages source is `main` / root, the project page will be published at:
 
-   <https://chaotan2003.github.io/projects/human_like_teleop/>
+   <https://chaotan2003.github.io/projects/human-like-redundancy/>
 
    GitHub Pages may require a short time to publish changes. If your site uses a different branch/deployment configuration, update that configuration accordingly.
 
