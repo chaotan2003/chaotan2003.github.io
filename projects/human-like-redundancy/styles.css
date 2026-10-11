@@ -245,7 +245,6 @@ figcaption {
 
 .full-figure img {
   width: 100%;
-  border: 1px solid #ececeb;
   border-radius: 3px;
 }
 
@@ -324,7 +323,6 @@ figcaption {
 
 .figure-grid img {
   width: 100%;
-  border: 1px solid #ececeb;
   border-radius: 3px;
 }
 
