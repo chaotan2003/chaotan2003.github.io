@@ -362,6 +362,11 @@ figcaption {
   object-fit: contain;
 }
 
+.task-video--compact {
+  width: 88%;
+  justify-self: center;
+}
+
 .demo-label {
   margin: 0 0 3px;
   color: var(--accent);
