@@ -349,9 +349,17 @@ figcaption {
   border-bottom: 1px solid var(--line);
 }
 
-.demo-row img {
+.demo-row img,
+.task-video {
   width: 100%;
   border-radius: 3px;
+}
+
+.task-video {
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: #101112;
+  object-fit: contain;
 }
 
 .demo-label {
