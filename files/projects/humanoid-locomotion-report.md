@@ -55,7 +55,7 @@ AMP 利用参考运动数据训练判别器，区分参考运动与策略生成�
 
 以下视频展示了运动控制策略从物理仿真验证到自研人形机器人实机部署的过程，包括仿真环境中的行走与奔跑，以及真实机器人上的运动控制效果。
 
-<video controls playsinline preload="metadata">
+<video controls playsinline autoplay loop muted preload="metadata">
   <source src="/files/projects/humanoid-locomotion.mp4" type="video/mp4">
   当前浏览器不支持视频播放。
 </video>
