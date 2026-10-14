@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="{{ page.description | default: page.title }}">
+	<title>{{ page.title }} | Chao Tan</title>
+	<style>
+		:root {
+			color-scheme: light;
+			--text: #1f2933;
+			--muted: #66788a;
+			--link: #003399;
+			--border: #dfe5eb;
+			--surface: #f6f8fa;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			color: var(--text);
+			background: #fff;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+			font-size: 17px;
+			line-height: 1.65;
+		}
+
+		a {
+			color: var(--link);
+		}
+
+		.site-header {
+			border-bottom: 1px solid var(--border);
+			background: #30363d;
+		}
+
+		.site-header-inner,
+		.report {
+			width: min(900px, calc(100% - 2rem));
+			margin: 0 auto;
+		}
+
+		.site-header-inner {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			min-height: 58px;
+		}
+
+		.site-header a {
+			color: #fff;
+			text-decoration: none;
+		}
+
+		.site-header .context {
+			color: #c8d1da;
+			font-size: 0.9rem;
+		}
+
+		.report {
+			padding: 3rem 0 4rem;
+		}
+
+		.report h1,
+		.report h2,
+		.report h3 {
+			color: #111820;
+			line-height: 1.25;
+		}
+
+		.report h1 {
+			margin: 0 0 0.75rem;
+			font-size: clamp(2rem, 5vw, 3rem);
+		}
+
+		.report h2 {
+			margin-top: 2.5rem;
+			padding-bottom: 0.35rem;
+			border-bottom: 1px solid var(--border);
+			font-size: 1.5rem;
+		}
+
+		.report h3 {
+			margin-top: 1.7rem;
+			font-size: 1.15rem;
+		}
+
+		.report blockquote {
+			margin: 1.5rem 0;
+			padding: 0.85rem 1rem;
+			border-left: 4px solid var(--link);
+			background: var(--surface);
+			color: #44515e;
+		}
+
+		.report code {
+			padding: 0.15rem 0.35rem;
+			border-radius: 4px;
+			background: var(--surface);
+			font-size: 0.9em;
+		}
+
+		.report video {
+			display: block;
+			width: 100%;
+			margin: 1rem 0;
+			border-radius: 6px;
+			background: #222b33;
+		}
+
+		.report-meta {
+			margin-bottom: 2rem;
+			color: var(--muted);
+		}
+
+		.report-nav {
+			margin-top: 3rem;
+			padding-top: 1rem;
+			border-top: 1px solid var(--border);
+		}
+
+		@media (max-width: 600px) {
+			body {
+				font-size: 16px;
+			}
+
+			.report {
+				padding-top: 2rem;
+			}
+
+			.site-header .context {
+				display: none;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header class="site-header">
+		<div class="site-header-inner">
+			<a href="{{ '/' | relative_url }}"><strong>Chao Tan</strong></a>
+			<span class="context">Project Report</span>
+		</div>
+	</header>
+	<main class="report">
+		{{ content }}
+	</main>
+</body>
+</html>
