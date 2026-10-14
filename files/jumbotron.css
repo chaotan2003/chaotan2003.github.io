@@ -18,3 +18,45 @@ a:hover {
 span.highlight {
   background-color: #ffffd0;
 }
+
+.project-entry {
+  align-items: flex-start;
+}
+
+.project-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #222b33;
+  object-fit: cover;
+}
+
+.project-details h5 {
+  margin-bottom: 0.35rem;
+  color: #000;
+  font-weight: 700;
+}
+
+.project-tags {
+  margin-bottom: 0.75rem;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.project-description {
+  margin-bottom: 0.65rem;
+}
+
+.project-links {
+  margin-bottom: 0;
+}
+
+.project-links a + a {
+  margin-left: 0.4rem;
+}
+
+@media (max-width: 767px) {
+  .project-details {
+    margin-top: 1rem;
+  }
+}
