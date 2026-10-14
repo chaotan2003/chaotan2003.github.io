@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang | default: 'en' }}">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -141,7 +141,7 @@
 	<header class="site-header">
 		<div class="site-header-inner">
 			<a href="{{ '/' | relative_url }}"><strong>Chao Tan</strong></a>
-			<span class="context">Project Report</span>
+			<span class="context">{{ page.report_label | default: 'Project Report' }}</span>
 		</div>
 	</header>
 	<main class="report">
