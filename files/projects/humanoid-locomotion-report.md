@@ -60,8 +60,6 @@ AMP 利用参考运动数据训练判别器，区分参考运动与策略生成�
   当前浏览器不支持视频播放。
 </video>
 
-[单独打开演示视频](/files/projects/humanoid-locomotion.mp4)
-
 ## 参考文献
 
 [1] PENG X B, MA Z, ABBEEL P, et al. AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control[J]. *ACM Transactions on Graphics*, 2021, 40(4): Article 144. [https://doi.org/10.1145/3450626.3459670](https://doi.org/10.1145/3450626.3459670).
