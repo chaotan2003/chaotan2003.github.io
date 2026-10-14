@@ -2,14 +2,14 @@
 layout: report
 lang: zh-CN
 report_label: 技术报告
-title: Humanoid Locomotion Control
+title: 人形机器人运动控制
 description: 基于强化学习、对抗运动先验与 Sim2Real 的自研人形机器人运动控制技术报告。
 permalink: /projects/humanoid-locomotion-report/
 ---
 
-# Humanoid Locomotion Control
+# 人形机器人运动控制
 
-<p class="report-meta"><strong>人形机器人运动控制</strong><br>强化学习（RL） · 对抗运动先验（AMP） · Sim2Real</p>
+<p class="report-meta">强化学习（RL） · 对抗运动先验（AMP） · Sim2Real</p>
 
 ## 1. 项目概述
 
@@ -25,7 +25,7 @@ permalink: /projects/humanoid-locomotion-report/
 
 在训练阶段，强化学习通过任务奖励优化速度跟踪、动态平衡与动作平滑性；AMP 通过对抗学习构建运动风格奖励，引导策略生成符合参考运动特征的动作。两类奖励共同优化运动控制策略。
 
-训练完成后，将策略从仿真环境迁移至真实机器人，形成从仿真训练、策略验证到实机部署的完整流程。整体流程参考了人形机器人运动学习与部署的相关工作和开源实现 [2–4]。
+训练完成后，将策略从仿真环境迁移至真实机器人，形成从仿真训练、策略验证到实机部署的完整流程。
 
 ## 3. 方法实现
 
